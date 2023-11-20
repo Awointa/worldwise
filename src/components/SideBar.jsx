@@ -11,7 +11,6 @@ export default function Sidear() {
 			<AppNav />
 			<Outlet />
 			<Footer />
-			""
 		</div>
 	);
 }
