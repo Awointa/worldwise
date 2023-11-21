@@ -1,6 +1,5 @@
 import Spinner from "./Spinner";
 import styles from "./CountriesList.module.css";
-import CityItem from "./CityItem";
 import CountryItem from "./CountryItem";
 import Message from "./Message";
 
@@ -20,7 +19,7 @@ export default function CountriesList({ cities, isLoading }) {
 	return (
 		<div className={styles.countriesList}>
 			{countries.map((country) => (
-				<CountryItem country={country} key={country.id} />
+				<CountryItem country={country} key={country.country} />
 			))}
 		</div>
 	);
