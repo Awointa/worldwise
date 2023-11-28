@@ -31,6 +31,7 @@ function CitiesProvider({ children }) {
 			const res = await fetch(`${BASE_URL}/cities/${id}`);
 			const data = await res.json();
 			setCurrentCity(data);
+			console.log(data)
 		} catch {
 			alert("There was an error loading Data ");
 		} finally {
