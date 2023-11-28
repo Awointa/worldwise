@@ -13,17 +13,17 @@ export function convertToEmoji(countryCode) {
 	return String.fromCodePoint(...codePoints);
 }
 
-const BASE_URL =
-	"https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0";
+const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function Form() {
 	const [lat, lng] = useUrlPosition();
-	console.log(lat, lng);
 
 	const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
 	const [cityName, setCityName] = useState("");
+	const [country, setCountry] = useState("");
 	const [date, setDate] = useState(new Date());
 	const [notes, setNotes] = useState("");
+	const [emoji, setEmoji] = useState("");
 
 	useEffect(
 		function () {
@@ -35,6 +35,9 @@ function Form() {
 					);
 					const data = await res.json();
 					console.log(data);
+					setCityName(data.city || data.locality || "");
+					setCountry(data.countryName);
+					setEmoji(convertToEmoji(data.countryCode));
 				} catch (err) {
 				} finally {
 					setIsLoadingGeocoding(false);
@@ -54,7 +57,7 @@ function Form() {
 					onChange={(e) => setCityName(e.target.value)}
 					value={cityName}
 				/>
-				{/* <span className={styles.flag}>{emoji}</span> */}
+				<span className={styles.flag}>{emoji}</span>
 			</div>
 
 			<div className={styles.row}>
