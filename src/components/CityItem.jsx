@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
-import { useCities } from "./context/CitiesContext";
+import { useCities } from "../contexts/CitiesContext";
 
 export default function CityItem({ city }) {
 	const { currentCity, deleteCity } = useCities();

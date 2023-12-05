@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Form.module.css";
 
 import { useUrlPosition } from "../hooks/useUrlPosition";
-import { useCities } from "./context/CitiesContext";
+import { useCities } from "../contexts/CitiesContext";
 import Message from "./Message";
 import BackButton from "./BackButton";
 import Spinner from "./Spinner";

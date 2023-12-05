@@ -1,4 +1,9 @@
+import { lazy } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import { CitiesProvider } from "./contexts/CitiesContext";
+import { AuthProvider } from "./contexts/FakeAuthContext";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 import Product from "./pages/Product";
 import Pricing from "./pages/Pricing";
@@ -6,13 +11,14 @@ import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import AppLayout from "./pages/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
+
+// const HomePage = lazy();
+
 import CityList from "./components/CityList";
 import CountriesList from "./components/CountriesList";
 import City from "./components/City";
 import Form from "./components/Form";
-import { CitiesProvider } from "./components/context/CitiesContext";
-import { AuthProvider } from "./components/context/FakeAuthContext";
-import ProtectedRoute from "./pages/ProtectedRoute";
+import React from "react";
 
 function App() {
 	return (
